@@ -1,0 +1,12 @@
+// Select duplicate row
+SELECT b1.`id` id1, b1.`name` AS name1, b2.id id2, b2.`name` name2
+FROM `duplicate_test` b1
+INNER JOIN duplicate_test b2
+WHERE b1.`id` > b2.`id` AND b1.`name` = b2.`name`
+;
+
+// Delete duplicate row
+DELETE b1
+FROM `duplicate_test` b1
+INNER JOIN duplicate_test b2
+WHERE b1.`id` > b2.`id` AND b1.`name` = b2.`name`
